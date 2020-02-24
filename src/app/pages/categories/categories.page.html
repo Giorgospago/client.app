@@ -7,7 +7,7 @@
 <ion-content>
   <ion-list>
 
-    <ion-item *ngFor="let category of categories">
+      <ion-item *ngFor="let category of categories" [routerLink]="['/categories/' + category._id]">
       <ion-label>{{ category.title }}</ion-label>
     </ion-item>
 
