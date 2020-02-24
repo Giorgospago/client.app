@@ -16,4 +16,8 @@ export class ApiService {
     return this.http.get<IResponse>(this.base + "categories");
   }
 
+  public getProductsByCategory(categoryId: string) {
+    return this.http.get<IResponse>(this.base + "categories/" + categoryId);
+  }
+
 }

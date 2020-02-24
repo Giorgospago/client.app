@@ -3,9 +3,21 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/categories"></ion-back-button>
     </ion-buttons>
-    <ion-title>Κατηγορία: </ion-title>
+    <ion-title>Κατηγορία: {{ category?.title }}</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content>
+
+  <ion-card *ngFor="let p of products" [routerLink]="['/product/' + p._id]">
+    <img [src]="p.photo" />
+    <ion-card-header>
+      <ion-card-subtitle>{{ p.price }}&euro;</ion-card-subtitle>
+      <ion-card-title>{{ p.title }}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{ p.miniDescription }}
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>
